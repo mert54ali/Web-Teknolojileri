@@ -1,0 +1,112 @@
+/* === Genel Sayfa Stilleri === */
+body {
+    margin: 0; /* Kenar boşluklarını sıfırla */
+    font-family: Arial, sans-serif; /* Temel yazı tipi */
+    background-size: cover; /* Arka plan görselini ekranı tamamen kaplayacak şekilde ayarlar */
+    background-position: center; /* Görseli ortalar */
+    background-repeat: no-repeat; /* Görselin tekrar etmesini engeller */
+    min-height: 100vh; /* Sayfa en az ekran kadar uzun olsun */
+	background-image: url('img/desktop-wallpaper-dark-backgrounds-for-pc-dark-background.jpg'); /* Arka plan resmi */
+    
+}
+
+/* === Navigasyon Menüsü (Ana Bar) === */
+nav {
+    background-color: rgba(0, 0, 0, 0.8); /* Yarı saydam koyu arka plan */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Hafif gölge efekti */
+    position: sticky; /* Yukarıya sabitlenmiş menü */
+    top: 0; /* Üste sabitle */
+    z-index: 1000; /* Diğer katmanların üzerinde */
+}
+
+/* === Navigasyon İçeriği (Orta hizalama ve boşluk) === */
+.nav-container {
+    display: flex; /* Elemanları yatay sırala */
+	background-image: url('img/duvar-resimleri-ates-alev.jpg'); /* Arka plan resmi  */
+    justify-content: center; /* Ortala */
+    max-width: 1200px; /* Menü genişliğini sınırlamak için */
+    margin: 0 auto; /* Ortalamak için */
+    padding: 12px 40px; /* Üst-alt ve sağ-sol boşluk */
+}
+
+/* === Menü Linkleri === */
+.nav-container a {
+    color: white; /* Yazı rengi beyaz */
+    text-decoration: none; /* Alt çizgiyi kaldır */
+    margin: 0 15px; /* Sağ ve sol boşluk */
+    font-size: 16px; /* Yazı boyutu */
+    font-weight: bold; /* Kalın yazı */
+    transition: color 0.3s, background-color 0.3s; /* Hover efekti geçişi */
+    padding: 8px 12px; /* Link içine boşluk */
+    border-radius: 4px; /* Hafif yuvarlak kenarlar */
+}
+
+/* === Hover efekti === */
+.nav-container a:hover {
+    background-color: #780a0a; /* Üzerine gelince koyu kırmızı */
+    color: #debd16; /* Yazı sarı */
+}
+
+/* === Ana İçerik Kutusu === */
+.main-content {
+    padding: 40px; /* İçerik çevresine boşluk */
+    color: white; /* Yazı rengini beyaz yapar */
+    background-color: rgba(0, 0, 0, 0.5); /* Şeffaf siyah arka plan */
+    margin: 20px; /* Dış boşluk */
+    border-radius: 10px; /* Köşeleri yuvarlatır */
+}
+/* === Başlıklar === */
+h1, h2, h3 {
+    color: white; /* Başlık rengini beyaz yap */
+    margin-bottom: 10px; /* Başlıktan sonra boşluk bırak */
+    font-weight: bold; /* Başlıkları kalın yap */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Hafif gölge efekti, okunabilirliği artırır */
+}
+
+h1 {
+    font-size: 36px; /* Ana başlıklar büyük olur */
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 28px; /* Alt başlık */
+}
+
+h3 {
+    font-size: 22px; /* Daha küçük başlık */
+}
+
+/* === Paragraflar === */
+p {
+    color: #f0f0f0; /* Paragraf metni açık gri */
+    line-height: 1.6; /* Satırlar arası boşluk */
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+/* === Liste Elemanları === */
+ul {
+    color: #dddddd; /* Liste metin rengi */
+    padding-left: 20px; /* Sol boşluk ver */
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+li {
+    margin-bottom: 5px; /* Liste öğeleri arasında boşluk */
+}
+
+/* === Resimler === */
+img {
+    max-width: 100%; /* Görsel ekranı taşırmasın */
+    height: auto; /* Oranını koru */
+    border-radius: 8px; /* Kenarları hafif yuvarla */
+    margin: 10px; /* Görseller arası boşluk */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6); /* Hafif gölge */
+    transition: transform 0.3s; /* Hover efekti geçişi */
+}
+
+img:hover {
+    transform: scale(1.03); /* Üzerine gelince hafif büyüme efekti */
+}
+
