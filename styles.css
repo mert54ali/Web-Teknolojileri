@@ -1,0 +1,84 @@
+/* Body: Sayfanın genel arka plan ve yazı renk ayarları */
+body {
+  margin: 0; /* Kenar boşlukları sıfır */
+  padding: 0; /* İç padding sıfır */
+  font-family: 'Arial', sans-serif; /* Yazı tipi */
+  background: #676767; /* Arka plan rengi siyah */
+  color: #fff; /* Yazı rengi beyaz */
+  line-height: 1.6; /* Satır yüksekliği, okunabilirliği artırır */
+}
+
+/* Navigation bar: Sayfa üstü sabit konumda, şeffaf ve hafif bulanık */
+nav {
+  position: fixed; /* Sayfa ile sabit durur */
+  top: 0; /* Üstten sıfır konumda */
+  width: 100%; /* Tam genişlik */
+  display: flex; /* Esnek kutu modeli */
+  justify-content: center; /* İçerik ortalanmış */
+  background: #c7c7c7; /* Şeffaf siyah */
+  padding: 15px 0; /* Dikey padding */
+  z-index: 999; /* Üstte durmasını sağlar */
+  backdrop-filter: blur(5px); /* Hafif bulanıklaştırma efekti */
+}
+
+/* Navigation içeriği: Liste olması, esnek hizalama */
+nav ul {
+  list-style: none; /* Maddeleri kaldır */
+  display: flex; /* Esnek kutu modeli */
+  margin: 0; /* Dış boşluk sıfır */
+  padding: 0; /* İç boşluk sıfır */
+}
+
+/* Liste öğeleri: Menü seçenekleri arası boşluk */
+nav li {
+  margin: 0 20px; /* Solda ve sağda margin */
+}
+
+/* Menü bağlantıları: Styling (renk, boyut, padding) ve geçiş efektleri */
+nav a {
+  text-decoration: none; /* Çizgi olmadan */
+  font-weight: bold; /* Kalın yazı */
+  font-size: 1.2em; /* Yazı büyüklüğü */
+  color: #fff; /* Renk: beyaz */
+  padding: 8px 16px; /* İç boşluk */
+  border-radius: 8px; /* Köşeleri yuvarlatma */
+  transition: all 0.3s ease; /* Yumuşak geçiş efekti */
+}
+
+/* Menü öğelerine hover efekti: büyüme, renk değiştirme ve arkaplan */
+nav a:hover {
+  transform: scale(1.1); /* Hafif büyüme */
+  color: #ffd700; /* Renk: altın sarısı */
+  background: rgba(255,255,255,0.2); /* Hafif arkaplan rengi */
+}
+
+/* Başlık: Sayfada ana başlık, ortada ve büyük, beyaz renk */
+h1 {
+  margin-top: 100px; /* Yükseklik boşluğu */
+  text-align: center; /* Ortalanmış */
+  font-size: 3em; /* Çok büyük font */
+  color: #fff; /* Beyaz renk */
+}
+
+/* Paragraf: Metin kutusu, solda hizalanmış, beyaz renk */
+p {
+  max-width: 800px; /* Maksimum genişlik */
+  margin: 0; /* Otomatik yan boşluk, ortalanmış */
+  font-size: 1.2em; /* Orta büyük font */
+  padding: 0 20px; /* Sol ve sağda boşluk */
+  color: #fff; /* Beyaz font */
+  /* text-align: left; */ /* Ortalamayı kaldırdım, solda hizalanacak */
+}
+
+/* Resim: Hover'da hafif büyüme efekti */
+img {
+  margin: 20px auto; /* Otomatik yan boşluk, ortalanmış */
+  display: block; /* Blok seviyesine getirildi */
+  transition: transform 0.1s ease; /* Geçiş efekti */
+  max-width: 100%; /* Görsel ekranı taşırmasın */
+    height: 500px; /* Oranını koru */
+}
+
+img:hover {
+  transform: scale(1.05); /* Hafif büyüme */
+}
