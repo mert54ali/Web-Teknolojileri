@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakaryaspor Resmi Tanıtım Sayfası</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9f5e9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #006400;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        img {
+			max-width: 100%;
+			height: 170px;
+			border: 5px solid #006400;
+			border-radius: 10px;
+			display: block;
+			margin: 20px auto;
+}
+
+        .info {
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #006400;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+        a {
+            color: #006400;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+		/* Navigation bar: Sayfa üstü sabit konumda, şeffaf ve hafif bulanık */
+		nav {
+		  position: fixed; /* Sayfa ile sabit durur */
+		  top: 0; /* Üstten sıfır konumda */
+		  width: 100%; /* Tam genişlik */
+		  display: flex; /* Esnek kutu modeli */
+		  justify-content: center; /* İçerik ortalanmış */
+		  background: #c7c7c7; /* Şeffaf siyah */
+		  padding: 15px 0; /* Dikey padding */
+		  z-index: 999; /* Üstte durmasını sağlar */
+		  backdrop-filter: blur(5px); /* Hafif bulanıklaştırma efekti */
+		}
+
+		/* Navigation içeriği: Liste olması, esnek hizalama */
+		nav ul {
+		  list-style: none; /* Maddeleri kaldır */
+		  display: flex; /* Esnek kutu modeli */
+		  margin: 0; /* Dış boşluk sıfır */
+		  padding: 0; /* İç boşluk sıfır */
+		}
+		/* Liste öğeleri: Menü seçenekleri arası boşluk */
+		nav li {
+		  margin: 0 20px; /* Solda ve sağda margin */
+		}
+
+		/* Menü bağlantıları: Styling (renk, boyut, padding) ve geçiş efektleri */
+		nav a {
+		  text-decoration: none; /* Çizgi olmadan */
+		  font-weight: bold; /* Kalın yazı */
+		  font-size: 1.2em; /* Yazı büyüklüğü */
+		  color: #fff; /* Renk: beyaz */
+		  padding: 8px 16px; /* İç boşluk */
+		  border-radius: 8px; /* Köşeleri yuvarlatma */
+		  transition: all 0.3s ease; /* Yumuşak geçiş efekti */
+		}
+
+		/* Menü öğelerine hover efekti: büyüme, renk değiştirme ve arkaplan */
+		nav a:hover {
+		  transform: scale(1.1); /* Hafif büyüme */
+		  color: #51bb36; /* Renk: yeşil */
+		  background: rgba(255,255,255,0.2); /* Hafif arkaplan rengi */
+		}
+    </style>
+</head>
+<body>
+<nav>
+<div class="nav-container">
+<a href="anasayfa.html">Anasayfa</a>
+<a href="hakkında.html">Hakkında</a>
+<a href="sehrim.html">Memleket</a>
+<a href="cv.html">CV</a>
+<a href="iletisim.html">İletişim</a>
+<a href="login.html">Çıkış</a>
+</div>
+</nav>
+<br><br>
+
+    <header>
+        <h1>Sakaryaspor</h1>
+        <p>Yeşil-Siyah'ın Gururu</p>
+    </header>
+
+    <main>
+        <img src="img/Sakaryaspor.jpg" alt="Sakaryaspor Logosu">
+
+        <div class="info">
+            <h2>Hakkında</h2>
+            <p><strong>Sakaryaspor</strong>, 1965 yılında Sakarya'da kurulmuş olan köklü bir Türk futbol kulübüdür. Renkleri yeşil-siyah olan kulüp, şu anda Türkiye 1. Ligi'nde mücadele etmektedir. Taraftar grubu Tatangalar, Türkiye'nin en ateşli taraftar gruplarından biridir.</p>
+
+            <h2>Başarıları</h2>
+            <ul>
+                <li>1997 Türkiye Kupası Şampiyonu</li>
+                <li>Birçok kez Süper Lig ve 1. Lig'de mücadele</li>
+                <li>Türk futboluna Hakan Şükür, Aykut Kocaman gibi yıldızları kazandırmıştır</li>
+            </ul>
+
+            <h2>Bağlantılar</h2>
+            <p>
+                Resmi Site: <a href="https://www.sakaryaspor.org.tr" target="_blank">sakaryaspor.org.tr</a><br>
+                Taraftar Grubu: <a href="https://www.instagram.com/tatangalar" target="_blank">Tatangalar Instagram</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 Sakaryaspor 
+    </footer>
+
+</body>
+</html>
