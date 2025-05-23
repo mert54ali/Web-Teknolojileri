@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>İletişim</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  
+  <style>
+    /* Genel sayfa yapısı */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Uygulama kapsayıcısı */
+    #app {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding-bottom: 80px; /* nav için yer bırak */
+    }
+
+    /* Form kutusu */
+    .form-wrapper {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.25rem;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      margin-right: 0.5rem;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Navigasyon çubuğu sabit ve düzgün */
+    nav {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .nav-container a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #007BFF;
+    }
+
+    .nav-container a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="app">
+    <div class="form-wrapper">
+      <form @submit.prevent="handleSubmit">
+        <label>Ad Soyad:</label>
+        <input type="text" v-model="form.fullname" required>
+
+        <label>E-posta:</label>
+        <input type="email" v-model="form.email" required>
+
+        <label>Telefon:</label>
+        <input type="tel" v-model="form.phone" pattern="[0-9]{10}" required>
+
+        <label>Konu:</label>
+        <select v-model="form.subject" required>
+          <option disabled value="">Seçiniz</option>
+          <option>Bilgi</option>
+          <option>Destek</option>
+          <option>Şikayet</option>
+        </select>
+
+        <label>Mesaj:</label>
+        <textarea v-model="form.message" required></textarea>
+
+        <button type="submit">Gönder</button>
+        <button type="button" @click="resetForm">Temizle</button>
+      </form>
+    </div>
+
+    <nav>
+      <div class="nav-container">
+        <a href="anasayfa.html">Anasayfa</a>
+        <a href="login.html">Çıkış</a>
+      </div>
+    </nav>
+  </div>
+
+  <script>
+    const { createApp } = Vue
+
+    createApp({
+      data() {
+        return {
+          form: {
+            fullname: '',
+            email: '',
+            phone: '',
+            subject: '',
+            message: ''
+          }
+        }
+      },
+      methods: {
+        handleSubmit() {
+          if (this.validateForm()) {
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = 'iletisim.php';
+
+            for (const key in this.form) {
+              const input = document.createElement('input');
+              input.type = 'hidden';
+              input.name = key;
+              input.value = this.form[key];
+              form.appendChild(input);
+            }
+
+            document.body.appendChild(form);
+            form.submit();
+          } else {
+            alert("Lütfen tüm alanları geçerli şekilde doldurunuz.");
+          }
+        },
+        resetForm() {
+          this.form = {
+            fullname: '',
+            email: '',
+            phone: '',
+            subject: '',
+            message: ''
+          };
+        },
+        validateForm() {
+          const phonePattern = /^[0-9]{10}$/;
+          return (
+            this.form.fullname.trim() !== '' &&
+            this.form.email.includes('@') &&
+            phonePattern.test(this.form.phone) &&
+            this.form.subject.trim() !== '' &&
+            this.form.message.trim() !== ''
+          );
+        }
+      }
+    }).mount('#app')
+  </script>
+
+</body>
+</html>
