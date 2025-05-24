@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login Sayfası</title>
+    <!--<link rel="stylesheet" href="styles.css" /> <!-- Ayrı CSS dosyası -->
+	
+	<style>
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #34495e; /* Düz ve hoş renk */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+/* Hoşgeldiniz Yazısı */
+h1 {
+    font-size: 3em;
+    margin: 0 0 20px 0;
+}
+
+/* Linkleri kapsayan alan */
+.links {
+    display: flex;
+    gap: 20px; /* Linkler arasındaki boşluk */
+}
+
+/* Linkler stili */
+.links a {
+    text-decoration: none;
+    color: #f39c12; /* Turuncu renk */
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.links a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h2>Giriş Yap</h2>
+        <form id="loginForm" method="POST" action="login.php" onsubmit="return validateForm()">
+            <div>
+                <label for="username">Kullanıcı Adı (Email):</label><br>
+                <input type="text" id="username" name="username" placeholder="Örnek: b1812100001@sakarya.edu.tr" />
+            </div><br>
+            <div>
+                <label for="password">Şifre:</label><br>
+                <input type="password" id="password" name="password" placeholder="Şifreniz" />
+            </div><br>
+            <button type="submit">Giriş</button>
+        </form>
+        <div id="errorMessage" style="color:red; margin-top: 10px;"></div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Boş alan kontrolü
+            if (!username || !password) {
+                errorMessage.textContent = 'Kullanıcı adı ve şifre boş bırakılamaz.';
+                return false;
+            }
+
+            // Email format kontrolü (basit regex)
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@sakarya\.edu\.tr$/;
+            if (!emailPattern.test(username)) {
+                errorMessage.textContent = 'Kullanıcı adı sakarya.edu.tr mail formatında olmalıdır.';
+                return false;
+            }
+
+            errorMessage.textContent = '';
+            return true; // Form gönderilebilir
+        }
+    </script>
+</body>
+</html>
